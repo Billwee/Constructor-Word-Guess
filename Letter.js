@@ -14,8 +14,10 @@ function Letter(char, isGuessed) {
 
   this.guess = function(letter) {
     if (letter === this.character) {
+      // console.log('true');
       this.isGuessed = true;
     } else {
+      // console.log('false');
       return;
     }
   };

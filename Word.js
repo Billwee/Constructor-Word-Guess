@@ -4,37 +4,53 @@ function Word(word) {
   this.arr = [...word];
   this.objArr = [];
   this.str = '';
+  this.answer = '';
 
   this.returnString = function() {
     // this.objArr = [];
     this.str = '';
+    this.answer = '';
 
     if (this.objArr && this.objArr.length) {
       this.objArr.forEach(element => {
-        this.str += element.placeholder() + ' ';
-        console.log('first');
+        if (element.character === ' ') {
+          this.str += ' ' + ' ';
+          this.answer += ' ';
+        } else {
+          this.str += element.placeholder() + ' ';
+          this.answer += element.placeholder();
+          // console.log('first');
+        }
       });
     } else {
       this.arr.forEach(element => {
-        var letter = new Letter(element);
-        this.objArr.push(letter);
-        this.str += letter.placeholder() + ' ';
-        console.log('second');
+        if (element === ' ') {
+          var letter = new Letter(element);
+          this.objArr.push(letter);
+          this.str += ' ' + ' ';
+        } else {
+          var letter = new Letter(element);
+          this.objArr.push(letter);
+          this.str += letter.placeholder() + ' ';
+          // console.log('second');
+        }
       });
     }
     // console.log(letter.placeholder());
     console.log(this.str);
-    console.log(this.objArr);
+    // console.log(this.objArr);
   };
 
   this.guessCall = function(char) {
     this.objArr.forEach(element => {
       element.guess(char);
     });
-    console.log(this.str);
-    console.log(this.objArr);
+    // console.log(this.str);
+    // console.log(this.objArr);
   };
 }
+
+module.exports = Word;
 
 //TESTS
 var adsf = new Word('Gue');
