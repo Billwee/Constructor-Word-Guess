@@ -15,17 +15,15 @@ function Letter(char, isGuessed) {
   this.guess = function(letter) {
     if (letter === this.character) {
       this.isGuessed = true;
-      // console.log('true');
     } else {
-      // console.log('false');
       return;
     }
   };
 }
 
+//TESTS
 // var wdx = new Letter('x');
 // placeholder();
-
 // console.log(wdx);
 
 module.exports = Letter;

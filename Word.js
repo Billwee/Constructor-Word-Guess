@@ -36,10 +36,11 @@ function Word(word) {
   };
 }
 
+//TESTS
 var adsf = new Word('Gue');
 
 // console.log(adsf.returnString());
-adsf.returnString();
-adsf.guessCall('u');
-adsf.returnString();
+// adsf.returnString();
+// adsf.guessCall('u');
+// adsf.returnString();
 // console.log(adsf.guessCall('u'));
