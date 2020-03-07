@@ -37,7 +37,7 @@ function Word(word) {
       });
     }
     // console.log(letter.placeholder());
-    console.log(this.str);
+    console.log('\n' + this.str + '\n');
     // console.log(this.objArr);
   };
 
